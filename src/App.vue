@@ -1,7 +1,11 @@
 <template>
     <el-container>
       <el-header>
-        <h1>Список дел</h1>
+        <el-row >
+        <router-link to="/add"><el-button type="primary">Добавить</el-button></router-link>
+        <router-link to="/"><el-button type="primary">Список</el-button></router-link>
+        <router-link to="/del"><el-button type="primary">Удалить</el-button></router-link>
+        </el-row>
       </el-header>
       <el-main>
         <router-view></router-view>

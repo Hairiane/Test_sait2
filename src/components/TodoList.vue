@@ -5,14 +5,8 @@
         :key="item.id"
         :item="item"
         :index="index"
+        @delIndex="delIndex(index)"
     />
-<el-button
-    type = "success"
-    @click =addItems
->
-  <el-icon class = "el-icon--left" ><plus/></el-icon>
-  Добавить</el-button>
-
 </template>
 
 <script>
@@ -29,7 +23,10 @@ export  default {
   methods:{
       addItems() {
     this.store.addItem()
-    }
+    },
+      delIndex(title){
+        this.store.delIndex(title)
+      }
   },
   components:{
     TodoItem

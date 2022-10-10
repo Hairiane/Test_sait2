@@ -4,13 +4,25 @@ const routes=[
     {
         path: '/',
         name: 'home',
-        component: () => import('@/views/Home.vue'),
+        component: () => import('@/components/TodoList.vue'),
         meta: {title: 'Список дел'}
     },
     {
         path: '/:pathMath(.*)*',
         name: 'NotFound',
         component: () => import('@/views/NotFound.vue'),
+    },
+    {
+        path: '/add',
+        name: 'Добавление',
+        component: () => import('@/views/add.vue'),
+        meta: {title: 'Добавление'},
+    },
+    {
+        path: '/del',
+        name: 'Удаление',
+        component: () => import('@/views/del.vue'),
+        meta: {title: 'Удаление'}
     },
 ]
 

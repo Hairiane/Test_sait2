@@ -31,7 +31,7 @@ export default {
   methods:{
     itemDoneChanged(){
       this.$emit('itemDoneChanged',this.item)
-    }
+    },
   }
 }
 </script>

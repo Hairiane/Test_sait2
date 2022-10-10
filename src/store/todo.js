@@ -15,6 +15,9 @@ export const useTodoStore = defineStore('main', {
                 id:undefined, name: '', done: false
             })
         },
+        delIndex(id) {
+            this.items.splice(id ,1)
+        },
         save(){
             console.log('todo saved!')
         }
