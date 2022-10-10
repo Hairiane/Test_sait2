@@ -6,6 +6,7 @@
         :item="item"
         :index="index"
         @delIndex="delIndex(index)"
+        :is-edit='false'
     />
 </template>
 

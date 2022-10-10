@@ -5,6 +5,7 @@
       :key="item.id"
       :item="item"
       :index="index"
+      :is-edit="true"
   />
 
   <el-button

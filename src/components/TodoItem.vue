@@ -1,20 +1,20 @@
 <template>
   <el-row :gutter="20">
     <el-col :span ="1"></el-col>
-    <el-tag style="height: 100%">
+    <el-tag style="height: 28px">
       {{ index + 1}}
     </el-tag>
 
     <el-col :span ="20">
-      <el-input placeholder="Название" v-model="item.name" />
+      <el-input :disabled="!isEdit" placeholder="Название" v-model="item.name" />
     </el-col>
-
     <el-col :span ="1">
       <el-checkbox
           @change="itemDoneChanged"
           v-model="item.done"
           size="large"
           label = "Сделано"
+          :disabled="!isEdit"
       />
     </el-col>
   </el-row>
@@ -26,6 +26,7 @@ export default {
   props: {
     index: Number,
     item: Object,
+    isEdit: Boolean,
   },
   emits:['itemDoneChanged'],
   methods:{
