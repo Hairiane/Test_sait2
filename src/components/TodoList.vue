@@ -6,10 +6,17 @@
         :item="item"
         :index="index"
     />
+<el-button
+    type = "success"
+    @click =addItems
+>
+  <el-icon class = "el-icon--left" ><plus/></el-icon>
+  Добавить</el-button>
+
 </template>
 
 <script>
-import {useTodoStore} from "@/str/todo";
+import {useTodoStore} from "@/store/todo";
 import TodoItem from "@/components/TodoItem.vue";
 
 export  default {
@@ -18,6 +25,11 @@ export  default {
       return {
         store: useTodoStore(),
       }
+  },
+  methods:{
+      addItems() {
+    this.store.addItem()
+    }
   },
   components:{
     TodoItem
