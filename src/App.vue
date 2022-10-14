@@ -5,6 +5,7 @@
         <router-link to="/add"><el-button type="primary">Добавить</el-button></router-link>
         <router-link to="/"><el-button type="primary">Список</el-button></router-link>
         <router-link to="/del"><el-button type="primary">Удалить</el-button></router-link>
+          <router-link to="/login"><el-button type="primary">Логин</el-button></router-link>
         </el-row>
       </el-header>
       <el-main>

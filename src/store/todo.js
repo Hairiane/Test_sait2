@@ -11,9 +11,9 @@ export const useTodoStore = defineStore('main', {
     },
     actions: {
         addItem(){
-            this.items.push({
-                id:undefined, name: '', done: false
-            })
+            this.items.push(
+                {id:undefined, name: '', done: false}
+            )
         },
         delIndex(id) {
             this.items.splice(id ,1)

@@ -1,4 +1,5 @@
 import {createRouter,createWebHistory} from "vue-router"
+import {useUserStore} from "@/store/user";
 
 const routes=[
     {
@@ -6,6 +7,12 @@ const routes=[
         name: 'home',
         component: () => import('@/components/TodoList.vue'),
         meta: {title: 'Список дел'}
+    },
+    {
+        path: '/login',
+        name: 'login',
+        component: () => import('@/views/login.vue'),
+        meta: {title: 'Вход'}
     },
     {
         path: '/:pathMath(.*)*',
@@ -27,13 +34,19 @@ const routes=[
 ]
 
 
-const router = createRouter({
+export const router = createRouter({
     routes,
     history: createWebHistory(),
 })
 
 router.beforeEach(function (to,from,next){
     document.title = to.meta.title || 'TODO VUE APP'
+    const userStore= useUserStore()
+
+    console.log(to)
+    if (!userStore.token && to.name !== 'login')
+        next({name: 'login'})
+    else
     next()
 })
 
